@@ -1,7 +1,8 @@
 pipeline {
     agent any
     stages { 
-        stage('Clean and Clone Repo') {
+        stage('Clean and Clone Repo') {	    
+	    //check if devopstesting folder is existing
             steps { 	
 		script {
                     if (fileExists('./devopstesting')){
