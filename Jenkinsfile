@@ -2,12 +2,7 @@ pipeline {
     agent any
     stages { 
         stage('Clean and Clone Repo') {
-            steps {
-                //script {
-                //    if (fileExists('./devopstesting')){
-                //        cleanWs()
-                //    }
-                //}    
+            steps { 
                 bat label: '', script: 'git pull https://github.com/medranss/devopstesting.git'
             }
         }
