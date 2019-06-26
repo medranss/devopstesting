@@ -3,7 +3,12 @@ pipeline {
     stages { 
         stage('Clean and Clone Repo') {
             steps { 
-                bat label: '', script: 'git pull origin master'
+		script {
+                    if (fileExists('./devopstesting')){
+                        cleanWs()
+                    }
+                }   
+                bat label: '', script: 'git clone https://github.com/medranss/devopstesting.git'
             }
         }
         stage('Build') {
