@@ -3,7 +3,7 @@ pipeline {
     stages { 
         stage('Clean and Clone Repo') {
             steps { 
-                bat label: '', script: 'git pull https://github.com/medranss/devopstesting.git'
+                bat label: '', script: 'git pull origin master'
             }
         }
         stage('Build') {
